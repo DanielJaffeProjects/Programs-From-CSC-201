@@ -29,8 +29,8 @@ class Maze:
 YOUR_NAME = "Daniel Jaffe"
 
 # change these constants so that they contain the paths out of your maze and labyrinth
-PATH_OUT_OF_MAZE = "TODO: Replace this string with your path using NSEW directions"
-PATH_OUT_OF_LABYRINTH = "TODO: Replace this string with your path using NSEW directions"
+PATH_OUT_OF_MAZE = "SENEESWSESNWWSW"
+PATH_OUT_OF_LABYRINTH = "SNSWWSWNEW"
 
 startLocation = MazeUtils.mazeFor(YOUR_NAME)
 
