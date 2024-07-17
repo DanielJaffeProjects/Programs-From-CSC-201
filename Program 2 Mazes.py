@@ -8,24 +8,13 @@
 
 from CSC201UT import MazeUtils
 
-
-# Maze Class
-class Maze:
-  def __init__(self, item = None):
-    self._item = item
-    self._N = None
-    self._S = None
-    self._W = None
-    self._E = None
-
-
 #######
 # MAIN
 #######
 
+# Name as a constant
 # don't change it once you've begun to explore your maze
 # (you might get a different maze and invalidate all of your hard work)
-#Ask user for name
 YOUR_NAME = "Daniel Jaffe"
 
 # change these constants so that they contain the paths out of your maze and labyrinth
