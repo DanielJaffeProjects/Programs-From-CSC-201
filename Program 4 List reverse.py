@@ -25,9 +25,12 @@ lst = []
 for i in range(1,36):
     lst.append(i)
 
+#Output original list
+print(f"Original list: {lst}")
+
 if Debug == True:
     print(lst)
 
 # Output the reversed list
-print(reverse_list(lst))
+print(f"Reverse list: {(reverse_list(lst))}")
 
