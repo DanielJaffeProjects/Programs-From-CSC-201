@@ -1,2 +1,2 @@
 # Programs-From-CSC-201
-These are the programs done in data structures
+In my Data Structures course, I explored various data structures, including linked lists, stacks, trees, queues, and hash tables, using Python to develop programs that demonstrated their functionalities. The coursework included different sorting algorithms and an in-depth study of Big O notation, along with techniques for optimizing performance. These experiences strengthened my programming skills and deepened my understanding of how data structures impact algorithm efficiency.
