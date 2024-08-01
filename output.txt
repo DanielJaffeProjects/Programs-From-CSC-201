@@ -1,0 +1,360 @@
+Books by title:
+  1984, Orwell (out)
+  20000 Leagues Under The Sea, Verne (out)
+  2001: A Space Odyssey, ClarkeA (out)
+  Alas Babylon, Frank
+  American Gods, Gaiman
+  Anathem, Stephenson (out)
+  Animal Farm, Orwell (out)
+  Belgariad, Eddings (out)
+  Book Of The New Sun, Wolfe (out)
+  Brave New World, Huxley
+  Canticle For Leibowitz, Miller
+  Cat's Cradle, Vonnegut
+  Caves Of Steel, Asimov (out)
+  Childhood's End, ClarkeA (out)
+  Chronicles Of Amber, Zelazny (out)
+  Chronicles Of Thomas Covenant The Unbeliever, Donaldson
+  Clockwork Orange, Burgess (out)
+  Codex Alera Series, Butcher (out)
+  Conan The Barbarian Series, Howard (out)
+  Contact, Sagan (out)
+  Cryptonomicon, Stephenson (out)
+  Crystal Cave, Stewart (out)
+  Culture Series, Banks (out)
+  Dark Tower Series, King (out)
+  Diamond Age, Stephenson (out)
+  Dispossessed, LeGuin (out)
+  Do Androids Dream Of Electric Sheep?, Dick
+  Doomsday Book, Willis (out)
+  Dragonflight, McCaffrey (out)
+  Dune Chronicles, Herbert (out)
+  Elric Saga, Moorcock
+  Ender's Game, Card
+  Eyre Affair, Fforde
+  Fahrenheit 451, Bradbury
+  Farseer Trilogy, Hobb (out)
+  Fire Upon The Deep, Vinge (out)
+  Flowers For Algernon, Keys
+  Forever War, Haldeman (out)
+  Foundation Trilogy, Asimov
+  Frankenstein, Shelley (out)
+  Going Postal, Pratchett (out)
+  Handmaid's Tale, Atwood (out)
+  Hard-boiled Wonderland and the End of the World, Murakami
+  Hitchhiker's Guide To The Galaxy, AdamsD
+  Hunger Games Trilogy, Collins
+  Hyperion, Simmons
+  I Am Legend, Matheson (out)
+  I Robot, Asimov (out)
+  Illustrated Man, Bradbury
+  Inherit The Stars, Hogan
+  Jonathan Strange & Mr Norrell, ClarkeS (out)
+  Journey To The Center Of The Earth, Verne (out)
+  Kingkiller Chronicles, Rothfuss (out)
+  Kushiel's Legacy Series, Carey (out)
+  Last Unicorn, Beagle (out)
+  Left Hand Of Darkness, LeGuin (out)
+  Legend Of Drizzt Series, Salvatore (out)
+  Lord Of The Rings Trilogy, Tolkien
+  Lucifer's Hammer, Niven&Pournelle
+  Malazan Book Of The Fallen Series, Erikson (out)
+  Mars Trilogy, Robinson
+  Martian Chronicles, Bradbury
+  Mistborn Series, Sanderson (out)
+  Mists Of Avalon, Bradley (out)
+  Moon Is A Harsh Mistress, Heinlein
+  Mote In God's Eye, Niven&Pournelle (out)
+  Neuromancer, Gibson (out)
+  Neverwhere, Gaiman
+  Old Man's War, Scalzi
+  Once And Future King, White
+  Outlander Series, Gabaldan (out)
+  Pastwatch, Card
+  Perdido Street Station, Mieville (out)
+  Princess Bride, Goldman
+  Ready Player One, Cline
+  Rendezvous With Rama, ClarkeA (out)
+  Riftwar Saga, Feist (out)
+  Ringworld, Niven (out)
+  Sandman, Gaiman
+  Shannara Trilogy, Brooks (out)
+  Silmarillion, Tolkien (out)
+  Slaughterhouse-Five, Vonnegut
+  Small Gods, Pratchett (out)
+  Snow Crash, Stephenson (out)
+  Something Wicked This Way Comes, Bradbury
+  Song Of Ice And Fire Series, Martin (out)
+  Space Trilogy, Lewis (out)
+  Sparrow, Russell
+  Stardust, Gaiman (out)
+  Starship Troopers, Heinlein (out)
+  Stranger In A Strange Land, Heinlein (out)
+  Sunshine, McKinley (out)
+  Sword Of Truth, Goodkind (out)
+  The Road, McCarthy (out)
+  The Stand, King
+  Thrawn Trilogy, Zahn (out)
+  Time Machine, Wells
+  Time Traveler's Wife, Niffenegger
+  Tripods Series, Christopher
+  Vorkosigan Saga, Bujold (out)
+  War Of The Worlds, Wells
+  Watchmen, Moore (out)
+  Watership Down, AdamsR
+  Way Of Kings, Sanderson (out)
+  Wheel Of Time Series, Jordan (out)
+  Wicked, Maguire
+  World War Z, Brooks (out)
+  Xanth Series, Anthony (out)
+
+Books by author:
+  Hitchhiker's Guide To The Galaxy, AdamsD
+  Watership Down, AdamsR
+  Xanth Series, Anthony (out)
+  Foundation Trilogy, Asimov
+  I Robot, Asimov (out)
+  Caves Of Steel, Asimov (out)
+  Handmaid's Tale, Atwood (out)
+  Culture Series, Banks (out)
+  Last Unicorn, Beagle (out)
+  Fahrenheit 451, Bradbury
+  Martian Chronicles, Bradbury
+  Something Wicked This Way Comes, Bradbury
+  Illustrated Man, Bradbury
+  Mists Of Avalon, Bradley (out)
+  World War Z, Brooks (out)
+  Shannara Trilogy, Brooks (out)
+  Vorkosigan Saga, Bujold (out)
+  Clockwork Orange, Burgess (out)
+  Codex Alera Series, Butcher (out)
+  Ender's Game, Card
+  Pastwatch, Card
+  Kushiel's Legacy Series, Carey (out)
+  Tripods Series, Christopher
+  2001: A Space Odyssey, ClarkeA (out)
+  Childhood's End, ClarkeA (out)
+  Rendezvous With Rama, ClarkeA (out)
+  Jonathan Strange & Mr Norrell, ClarkeS (out)
+  Ready Player One, Cline
+  Hunger Games Trilogy, Collins
+  Do Androids Dream Of Electric Sheep?, Dick
+  Chronicles Of Thomas Covenant The Unbeliever, Donaldson
+  Belgariad, Eddings (out)
+  Malazan Book Of The Fallen Series, Erikson (out)
+  Riftwar Saga, Feist (out)
+  Eyre Affair, Fforde
+  Alas Babylon, Frank
+  Outlander Series, Gabaldan (out)
+  American Gods, Gaiman
+  Sandman, Gaiman
+  Neverwhere, Gaiman
+  Stardust, Gaiman (out)
+  Neuromancer, Gibson (out)
+  Princess Bride, Goldman
+  Sword Of Truth, Goodkind (out)
+  Forever War, Haldeman (out)
+  Stranger In A Strange Land, Heinlein (out)
+  Starship Troopers, Heinlein (out)
+  Moon Is A Harsh Mistress, Heinlein
+  Dune Chronicles, Herbert (out)
+  Farseer Trilogy, Hobb (out)
+  Inherit The Stars, Hogan
+  Conan The Barbarian Series, Howard (out)
+  Brave New World, Huxley
+  Wheel Of Time Series, Jordan (out)
+  Flowers For Algernon, Keys
+  Dark Tower Series, King (out)
+  The Stand, King
+  Left Hand Of Darkness, LeGuin (out)
+  Dispossessed, LeGuin (out)
+  Space Trilogy, Lewis (out)
+  Wicked, Maguire
+  Song Of Ice And Fire Series, Martin (out)
+  I Am Legend, Matheson (out)
+  Dragonflight, McCaffrey (out)
+  The Road, McCarthy (out)
+  Sunshine, McKinley (out)
+  Perdido Street Station, Mieville (out)
+  Canticle For Leibowitz, Miller
+  Elric Saga, Moorcock
+  Watchmen, Moore (out)
+  Hard-boiled Wonderland and the End of the World, Murakami
+  Time Traveler's Wife, Niffenegger
+  Ringworld, Niven (out)
+  Mote In God's Eye, Niven&Pournelle (out)
+  Lucifer's Hammer, Niven&Pournelle
+  1984, Orwell (out)
+  Animal Farm, Orwell (out)
+  Small Gods, Pratchett (out)
+  Going Postal, Pratchett (out)
+  Mars Trilogy, Robinson
+  Kingkiller Chronicles, Rothfuss (out)
+  Sparrow, Russell
+  Contact, Sagan (out)
+  Legend Of Drizzt Series, Salvatore (out)
+  Mistborn Series, Sanderson (out)
+  Way Of Kings, Sanderson (out)
+  Old Man's War, Scalzi
+  Frankenstein, Shelley (out)
+  Hyperion, Simmons
+  Snow Crash, Stephenson (out)
+  Cryptonomicon, Stephenson (out)
+  Diamond Age, Stephenson (out)
+  Anathem, Stephenson (out)
+  Crystal Cave, Stewart (out)
+  Lord Of The Rings Trilogy, Tolkien
+  Silmarillion, Tolkien (out)
+  20000 Leagues Under The Sea, Verne (out)
+  Journey To The Center Of The Earth, Verne (out)
+  Fire Upon The Deep, Vinge (out)
+  Slaughterhouse-Five, Vonnegut
+  Cat's Cradle, Vonnegut
+  Time Machine, Wells
+  War Of The Worlds, Wells
+  Once And Future King, White
+  Doomsday Book, Willis (out)
+  Book Of The New Sun, Wolfe (out)
+  Thrawn Trilogy, Zahn (out)
+  Chronicles Of Amber, Zelazny (out)
+
+Searching for title = I Robot:
+  I Robot, Asimov (out)
+Searching for title = U Robot:
+  None
+
+Searching for author = Card:
+  Ender's Game, Card
+  Pastwatch, Card
+Searching for author = Cord:
+  None
+Searching for author = ClarkeA:
+  2001: A Space Odyssey, ClarkeA (out)
+  Childhood's End, ClarkeA (out)
+  Rendezvous With Rama, ClarkeA (out)
+
+Checking out all books by Gaiman
+  American Gods, Gaiman ->   American Gods, Gaiman (out)
+  Sandman, Gaiman ->   Sandman, Gaiman (out)
+  Neverwhere, Gaiman ->   Neverwhere, Gaiman (out)
+Checking in all books by Gaiman
+  American Gods, Gaiman (out) ->   American Gods, Gaiman
+  Sandman, Gaiman (out) ->   Sandman, Gaiman
+  Neverwhere, Gaiman (out) ->   Neverwhere, Gaiman
+  Stardust, Gaiman (out) ->   Stardust, Gaiman
+
+Books checked out:
+  1984, Orwell
+  20000 Leagues Under The Sea, Verne
+  2001: A Space Odyssey, ClarkeA
+  Anathem, Stephenson
+  Animal Farm, Orwell
+  Belgariad, Eddings
+  Book Of The New Sun, Wolfe
+  Caves Of Steel, Asimov
+  Childhood's End, ClarkeA
+  Chronicles Of Amber, Zelazny
+  Clockwork Orange, Burgess
+  Codex Alera Series, Butcher
+  Conan The Barbarian Series, Howard
+  Contact, Sagan
+  Cryptonomicon, Stephenson
+  Crystal Cave, Stewart
+  Culture Series, Banks
+  Dark Tower Series, King
+  Diamond Age, Stephenson
+  Dispossessed, LeGuin
+  Doomsday Book, Willis
+  Dragonflight, McCaffrey
+  Dune Chronicles, Herbert
+  Farseer Trilogy, Hobb
+  Fire Upon The Deep, Vinge
+  Forever War, Haldeman
+  Frankenstein, Shelley
+  Going Postal, Pratchett
+  Handmaid's Tale, Atwood
+  I Am Legend, Matheson
+  I Robot, Asimov
+  Jonathan Strange & Mr Norrell, ClarkeS
+  Journey To The Center Of The Earth, Verne
+  Kingkiller Chronicles, Rothfuss
+  Kushiel's Legacy Series, Carey
+  Last Unicorn, Beagle
+  Left Hand Of Darkness, LeGuin
+  Legend Of Drizzt Series, Salvatore
+  Malazan Book Of The Fallen Series, Erikson
+  Mistborn Series, Sanderson
+  Mists Of Avalon, Bradley
+  Mote In God's Eye, Niven&Pournelle
+  Neuromancer, Gibson
+  Outlander Series, Gabaldan
+  Perdido Street Station, Mieville
+  Rendezvous With Rama, ClarkeA
+  Riftwar Saga, Feist
+  Ringworld, Niven
+  Shannara Trilogy, Brooks
+  Silmarillion, Tolkien
+  Small Gods, Pratchett
+  Snow Crash, Stephenson
+  Song Of Ice And Fire Series, Martin
+  Space Trilogy, Lewis
+  Starship Troopers, Heinlein
+  Stranger In A Strange Land, Heinlein
+  Sunshine, McKinley
+  Sword Of Truth, Goodkind
+  The Road, McCarthy
+  Thrawn Trilogy, Zahn
+  Vorkosigan Saga, Bujold
+  Watchmen, Moore
+  Way Of Kings, Sanderson
+  Wheel Of Time Series, Jordan
+  World War Z, Brooks
+  Xanth Series, Anthony
+
+Fire! Evacuating all books:
+  Hitchhiker's Guide To The Galaxy, AdamsD
+  Lord Of The Rings Trilogy, Tolkien
+  Sparrow, Russell
+  Princess Bride, Goldman
+  Do Androids Dream Of Electric Sheep?, Dick
+  Ender's Game, Card
+  Watership Down, AdamsR
+  Canticle For Leibowitz, Miller
+  Elric Saga, Moorcock
+  Something Wicked This Way Comes, Bradbury
+  Inherit The Stars, Hogan
+  Hunger Games Trilogy, Collins
+  Foundation Trilogy, Asimov
+  Fahrenheit 451, Bradbury
+  American Gods, Gaiman
+  Slaughterhouse-Five, Vonnegut
+  The Stand, King
+  Sandman, Gaiman
+  Neverwhere, Gaiman
+  Time Traveler's Wife, Niffenegger
+  Eyre Affair, Fforde
+  Old Man's War, Scalzi
+  Lucifer's Hammer, Niven&Pournelle
+  Ready Player One, Cline
+  Pastwatch, Card
+  Moon Is A Harsh Mistress, Heinlein
+  Once And Future King, White
+  Flowers For Algernon, Keys
+  Wicked, Maguire
+  Illustrated Man, Bradbury
+  Mars Trilogy, Robinson
+  Hard-boiled Wonderland and the End of the World, Murakami
+  Tripods Series, Christopher
+  Chronicles Of Thomas Covenant The Unbeliever, Donaldson
+  Time Machine, Wells
+  Cat's Cradle, Vonnegut
+  Martian Chronicles, Bradbury
+  Brave New World, Huxley
+  War Of The Worlds, Wells
+  Alas Babylon, Frank
+  Hyperion, Simmons
+
+Author(s) with the most books (4 books):
+  Bradbury
+  Gaiman
+  Stephenson
