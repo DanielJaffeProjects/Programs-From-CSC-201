@@ -1,0 +1,27 @@
+Contact records:
+  Gio had contact with Goober
+  Holly had contact with Gio, Lil, Mike, Raonic, Shelly
+  Lil had contact with Gio
+  Mike had contact with Goober
+  Raonic had contact with Goober
+  Shelly had contact with Mike
+
+Patient zeros: Holly
+Potential zombies: Goober
+Neither patient zero nor potential zombie: Gio, Lil, Mike, Raonic, Shelly
+Most viral people: Holly
+Most contacted people: Goober
+
+Maximum distance from a potential zombie:
+  Holly: 3
+  Lil: 2
+  Shelly: 2
+  Gio: 1
+  Mike: 1
+  Raonic: 1
+  Goober: 0
+
+For extra credit:
+  Spreader zombies: Gio, Mike, Raonic
+  Regular zombies: None
+  Zombie predators: Holly, Lil, Shelly

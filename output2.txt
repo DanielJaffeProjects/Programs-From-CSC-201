@@ -1,0 +1,39 @@
+Contact records:
+  Alice had contact with Bob, Carol, Darryl, Ettienne Fourth, Forbert Findlesworth II, Gordie
+  Bob had contact with Lammle
+  Carol had contact with Lammle
+  Darryl had contact with Lammle
+  Ettienne Fourth had contact with Lammle
+  Forbert Findlesworth II had contact with Job, Molly
+  Gordie had contact with Kirk
+  Hanes had contact with Bob, Carol, Ettienne Fourth, Forbert Findlesworth II
+  Illersley had contact with Darryl, Ettienne Fourth, Forbert Findlesworth II, Gordie, Job, Kirk
+  Job had contact with Lammle
+  Kirk had contact with Job
+  Molly had contact with Job, Kirk
+
+Patient zeros: Alice, Hanes, Illersley
+Potential zombies: Lammle
+Neither patient zero nor potential zombie: Bob, Carol, Darryl, Ettienne Fourth, Forbert Findlesworth II, Gordie, Job, Kirk, Molly
+Most viral people: Alice, Illersley
+Most contacted people: Lammle
+
+Maximum distance from a potential zombie:
+  Alice: 5
+  Hanes: 5
+  Illersley: 5
+  Forbert Findlesworth II: 4
+  Gordie: 3
+  Molly: 3
+  Kirk: 2
+  Bob: 1
+  Carol: 1
+  Darryl: 1
+  Ettienne Fourth: 1
+  Job: 1
+  Lammle: 0
+
+For extra credit:
+  Spreader zombies: Bob, Carol, Darryl, Ettienne Fourth, Job
+  Regular zombies: None
+  Zombie predators: Alice, Forbert Findlesworth II, Gordie, Hanes, Illersley, Kirk, Molly

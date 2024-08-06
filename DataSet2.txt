@@ -1,0 +1,12 @@
+Alice,Bob,Carol,Darryl,Ettienne Fourth,Forbert Findlesworth II,Gordie
+Hanes,Bob,Carol,Ettienne Fourth,Forbert Findlesworth II
+Illersley,Darryl,Ettienne Fourth,Forbert Findlesworth II,Job,Kirk,Gordie
+Job,Lammle
+Forbert Findlesworth II,Molly,Job
+Kirk,Job
+Darryl,Lammle
+Bob,Lammle
+Ettienne Fourth,Lammle
+Carol,Lammle
+Molly,Job,Kirk
+Gordie,Kirk

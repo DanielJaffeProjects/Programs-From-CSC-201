@@ -1,0 +1,43 @@
+Contact records:
+  Aing had contact with Xing
+  Al had contact with Jimmy, Korra, Morty, Rolli
+  Alice had contact with Aing, Xing
+  Harper had contact with Aing
+  Jam had contact with Sarah, Zufai
+  Jimmy had contact with Zufai
+  Korra had contact with Aing, Xing
+  Morty had contact with Aing, Xing, Zufai
+  Rolli had contact with Aing, Korra, Woerther
+  Sarah had contact with Smith, Zufai
+  Vanessa had contact with Aing, Xing
+  Zhang had contact with Alice, Harper, Rolli, Vanessa
+  Zufai had contact with Smith
+
+Patient zeros: Al, Jam, Zhang
+Potential zombies: Smith, Woerther, Xing
+Neither patient zero nor potential zombie: Aing, Alice, Harper, Jimmy, Korra, Morty, Rolli, Sarah, Vanessa, Zufai
+Most viral people: Al, Zhang
+Most contacted people: Aing
+
+Maximum distance from a potential zombie:
+  Al: 4
+  Zhang: 4
+  Jam: 3
+  Rolli: 3
+  Alice: 2
+  Harper: 2
+  Jimmy: 2
+  Korra: 2
+  Morty: 2
+  Sarah: 2
+  Vanessa: 2
+  Aing: 1
+  Zufai: 1
+  Smith: 0
+  Woerther: 0
+  Xing: 0
+
+For extra credit:
+  Spreader zombies: Aing, Zufai
+  Regular zombies: Alice, Korra, Morty, Rolli, Sarah, Vanessa
+  Zombie predators: Al, Harper, Jam, Jimmy, Zhang

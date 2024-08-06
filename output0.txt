@@ -1,0 +1,19 @@
+Contact records:
+  Larry had contact with Zach
+  Zach had contact with George
+
+Patient zeros: Larry
+Potential zombies: George
+Neither patient zero nor potential zombie: Zach
+Most viral people: Larry, Zach
+Most contacted people: George, Zach
+
+Maximum distance from a potential zombie:
+  Larry: 2
+  Zach: 1
+  George: 0
+
+For extra credit:
+  Spreader zombies: Zach
+  Regular zombies: None
+  Zombie predators: Larry

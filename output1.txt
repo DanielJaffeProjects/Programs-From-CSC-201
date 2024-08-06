@@ -1,0 +1,34 @@
+Contact records:
+  Bob had contact with Carol, Leanne, Mark, Paul, Will
+  Carol had contact with Leanne, Mark
+  Farley had contact with Paul
+  Larry had contact with Carol, Leanne, Mark, Will
+  Leanne had contact with Sarai
+  Mark had contact with Philip, Zach
+  Paul had contact with Zach
+  Will had contact with Leanne, Mark
+  Zach had contact with Philip
+
+Patient zeros: Bob, Farley, Larry
+Potential zombies: Philip, Sarai
+Neither patient zero nor potential zombie: Carol, Leanne, Mark, Paul, Will, Zach
+Most viral people: Bob
+Most contacted people: Leanne, Mark
+
+Maximum distance from a potential zombie:
+  Bob: 4
+  Larry: 4
+  Carol: 3
+  Farley: 3
+  Will: 3
+  Mark: 2
+  Paul: 2
+  Leanne: 1
+  Zach: 1
+  Philip: 0
+  Sarai: 0
+
+For extra credit:
+  Spreader zombies: Leanne, Zach
+  Regular zombies: Mark
+  Zombie predators: Bob, Carol, Farley, Larry, Paul, Will
