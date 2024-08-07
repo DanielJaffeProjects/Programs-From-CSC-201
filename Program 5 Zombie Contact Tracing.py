@@ -10,7 +10,7 @@ from CSC201UT import BinaryTree
 Debug = True
 
 # Part 1
-# I used a array since tranversing to through a array has a O(n)
+# I used a ordered array since tranversing to through a array has a O(n)
 def contact_with(first_name_array,contact_array):
 
     print("Contact records:")
@@ -21,14 +21,19 @@ def contact_with(first_name_array,contact_array):
         print(f"  {first_name_array[i]} had contact with {", ".join(contact_array[i])}")
 
 # Part 2
-# Used a array since I need to tranverse the people array list to find and one that was not in anyone else contact list this gave me a O(n)
+# I Used a ordered array since for searching it is a O(log2n)
 def patient_zeros(people_array,contact_array):
+
+    # Initializing values
+    total_contact_array = []
 
     # initialize patients zeros array
     patient_zeros = []
 
     # used geeks for geeks to combine contact array into one single array
-    total_contact_array = sum(contact_array,[])
+    for i in sum(contact_array,[]):
+        if i not in total_contact_array:
+            total_contact_array.append(i)
 
     if Debug == True:
         print(total_contact_array)
