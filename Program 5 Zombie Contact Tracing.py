@@ -5,7 +5,7 @@
 #########################
 
 # Imports
-from CSC201UT import *
+from CSC201UT import BinaryTree
 
 Debug = True
 
@@ -15,16 +15,33 @@ def contact_with(first_name_array,contact_array):
 
     print("Contact records:")
 
-
-
     # loop through each line
     # Connect first name with contacts
     for i in range(0,len(first_name_array)):
         print(f"  {first_name_array[i]} had contact with {", ".join(contact_array[i])}")
 
-# I choose a link list since it is a small data set but it is unpredictable
-def patient_zeros(set1):
-    pass
+# Part 2
+# Used a array since I need to tranverse the people array list to find and one that was not in anyone else contact list this gave me a O(n)
+def patient_zeros(people_array,contact_array):
+
+    # initialize patients zeros array
+    patient_zeros = []
+
+    # used geeks for geeks to combine contact array into one single array
+    total_contact_array = sum(contact_array,[])
+
+    if Debug == True:
+        print(total_contact_array)
+        print(people_array)
+        print(contact_array)
+
+    # loop through all the people and append people not in contact array
+    for i in range(0,len(people_array)):
+        if people_array[i] not in total_contact_array:
+            patient_zeros.append(people_array[i])
+
+    # Output people who are not in other contact list
+    print("Patient zeros:",", ".join(patient_zeros))
 
 # Main
 #######
@@ -45,7 +62,12 @@ for line in (set1):
 
     # Split into arrays for first name and contacts
     people = line.split(",")
-    people_array.append(people)
+
+    # removing duplicates in people array
+    for i in people:
+        if i not in people_array:
+            people_array.append(i)
+
     first_name_array.append(people[0])
     contact_array.append(people[1:])
     contact_array.sort()
@@ -62,4 +84,4 @@ if Debug == True:
 contact_with(first_name_array,contact_array)
 
 # Part 2 Who are patient zeros
-patient_zeros()
+patient_zeros(people_array, contact_array)
