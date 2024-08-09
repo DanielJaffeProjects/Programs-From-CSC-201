@@ -9,6 +9,7 @@ from CSC201UT import OrderedBinaryTree
 
 Debug = True
 
+
 # Added search function for binary tree
 def search(tree, val):
     Node = tree._root
@@ -22,11 +23,9 @@ def search(tree, val):
     return None
 
 
-
 # Part 1
 # I used an ordered array since transversing to through a array has a O(n)
 def contact_with(set1):
-
     # initialize arrays
     people_array = []
     people_array_sorted = []
@@ -39,7 +38,7 @@ def contact_with(set1):
         # Split into arrays for first name and contacts
         people = line.split(",")
 
-    # Add all people into one array
+        # Add all people into one array
         people_array.append(people)
         people_array_sorted.append(people)
 
@@ -67,38 +66,37 @@ def contact_with(set1):
 
     if Debug == True:
         print("people_array", people_array)
-        print("people_array_sorted",)
+        print("people_array_sorted", )
         print("first_name_array", first_name_array)
         print("first_name_array_sorted", first_name_array_sorted)
         print("contact_array", contact_array)
         print("contact_array_sorted", contact_array_sorted)
 
-
     print("Contact records:")
     # loop through each line
     # Connect first name with contacts
-    for i in range(0,len(first_name_array_sorted)):
+    for i in range(0, len(first_name_array_sorted)):
         print(f"  {first_name_array_sorted[i]} had contact with {", ".join((contact_array_sorted[i]))}")
 
-    return(contact_array,first_name_array,people_array)
+    return (contact_array, first_name_array, people_array)
+
 
 # Part 2
 # I used an array to transverse through the all the people since it has O(n) and to search I used a binary tree for the contacts since it is a O(log2n) for a total O(nlog2n)
-def patient_zeros(people_array,contact_array):
-
+def patient_zeros(people_array, contact_array):
     # Initializing values
     total_contact_array = []
     patient_zeros = []
-    total_people_array =[]
+    total_people_array = []
 
     # used geeks for geeks to combine contact array into one single array
-    for i in sum(contact_array,[]):
+    for i in sum(contact_array, []):
         if i not in total_contact_array:
             total_contact_array.append(i)
 
     # Combines all people into on array
     # removes duplicates
-    for i in sum(people_array,[]):
+    for i in sum(people_array, []):
         if i not in total_people_array:
             total_people_array.append(i)
 
@@ -114,11 +112,10 @@ def patient_zeros(people_array,contact_array):
         print("total_people_array", total_people_array)
         print(contact_tree)
 
-
     # loop through all the people and compare to the contacts
     # Then append to patient zero array
     for person in total_people_array:
-        if search(contact_tree,person) == None:
+        if search(contact_tree, person) == None:
             patient_zeros.append(person)
 
     if Debug == True:
@@ -130,12 +127,12 @@ def patient_zeros(people_array,contact_array):
     # Output of patient zeros
     print(f"Patient zeros: {", ".join(patient_zeros)}")
 
-    return total_contact_array,total_people_array, patient_zeros
+    return total_contact_array, total_people_array, patient_zeros
+
 
 # Part 3
 # I used an array to transverse the contact names since it has O(n) and to search I used a binary tree for the first names since it is a O(log2n) for a total O(nlog2n)
-def potential_zombies(first_name_array,total_contact_array):
-
+def potential_zombies(first_name_array, total_contact_array):
     # Initializing values
     potential_zombies = []
 
@@ -151,7 +148,7 @@ def potential_zombies(first_name_array,total_contact_array):
 
     # Search for the contact in firstname tree
     for contact in total_contact_array:
-        if search(first_name_tree,contact) == None:
+        if search(first_name_tree, contact) == None:
             potential_zombies.append(contact)
 
     if Debug == True:
@@ -165,14 +162,13 @@ def potential_zombies(first_name_array,total_contact_array):
 
     return potential_zombies
 
+
 # Part 4
 # I used an array to transverse the all people names since it has O(n) and to search I used a binary tree for the zombies and zeros since it is a O(log2n) for a total O(nlog2n)
-def neither_zeros_or_zombies(total_people_array,patient_zeros,potential_zombies):
-
+def neither_zeros_or_zombies(total_people_array, patient_zeros, potential_zombies):
     # initializing values
     neither_zeros_or_zombies = []
     zeros_plus_zombies = potential_zombies + patient_zeros
-
 
     # Binary tree for zeros and zombies
     zeros_plus_zombies_tree = OrderedBinaryTree()
@@ -190,16 +186,17 @@ def neither_zeros_or_zombies(total_people_array,patient_zeros,potential_zombies)
         if search(zeros_plus_zombies_tree, person) == None:
             neither_zeros_or_zombies.append(person)
 
-    #Sort neither zeros or zombies alphabetically
+    # Sort neither zeros or zombies alphabetically
     neither_zeros_or_zombies.sort()
 
-    #output of neither zeros or zombies
+    # output of neither zeros or zombies
     print(f"Neither patient zero nor potential zombie: {", ".join(neither_zeros_or_zombies)}")
+
 
 # Main
 #######
 
-with open("DataSet1.txt","r") as file:
+with open("DataSet1.txt", "r") as file:
     set1 = file.readlines()
 
 if Debug == True:
@@ -212,10 +209,10 @@ contact_array, first_name_array, people_array = contact_with(set1)
 print()
 
 # Part 2 Who are patient zeros
-total_contact_array,total_people_array, patient_zeros = patient_zeros(people_array, contact_array)
+total_contact_array, total_people_array, patient_zeros = patient_zeros(people_array, contact_array)
 
 # Part 3 Who are potential zombies
-potential_zombies = potential_zombies(first_name_array,total_contact_array)
+potential_zombies = potential_zombies(first_name_array, total_contact_array)
 
 # Part 4 Who are neither patient zeros nor potential zombies
-neither_zeros_or_zombies(total_people_array,patient_zeros,potential_zombies)
+neither_zeros_or_zombies(total_people_array, patient_zeros, potential_zombies)
