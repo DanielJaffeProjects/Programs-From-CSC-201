@@ -6,6 +6,7 @@
 
 # Imports
 from CSC201UT import OrderedBinaryTree
+from random import shuffle
 
 Debug = True
 
@@ -21,16 +22,18 @@ def search(tree, val):
             Node = Node._right
     return None
 
-# Part 1
-# I used an ordered array since tranversing to through a array has a O(n)
-def contact_with(set1):
 
-    print("Contact records:")
+
+# Part 1
+# I used an ordered array since transversing to through a array has a O(n)
+def contact_with(set1):
 
     # initialize arrays
     people_array = []
+    people_array_sorted = []
     first_name_array = []
     contact_array = []
+    contact_array_sorted = []
 
     # loop through each line in the set
     for line in (set1):
@@ -39,39 +42,49 @@ def contact_with(set1):
 
     # Add all people into one array
         people_array.append(people)
+        people_array_sorted.append(people)
 
-    # Sorts so that first name in people array is alphabetical
-    people_array.sort()
+    # sort people by first name
+    for i in people_array:
+        people_array_sorted.sort()
 
     # the first name from each array
     for i in range(len(people_array)):
         first_name_array.append(people_array[i][0])
 
+    # First Name sorted alphabetically
+    # Learned this function on W3Schools
+    first_name_array_sorted = sorted(first_name_array)
+
     # the contacts of each first name
     # Remove the space from the last name
-    for people in range(len(people_array)):
-        people_array[people][-1] = (people_array[people][-1].strip())
-        contact_array.append(people_array[people][1:])
+    for people in range(len(people_array_sorted)):
+        people_array_sorted[people][-1] = (people_array_sorted[people][-1].strip())
+        contact_array.append(people_array_sorted[people][1:])
 
-    # Sorting the contacts in alphabetical order
-    for contact in (contact_array):
-        contact.sort()
+    # sort contacts alphabetically
+    for i in range(len(contact_array)):
+        contact_array_sorted.append(sorted(contact_array[i]))
 
     if Debug == True:
         print("people_array", people_array)
+        print("people_array_sorted",)
         print("first_name_array", first_name_array)
+        print("first_name_array_sorted", first_name_array_sorted)
         print("contact_array", contact_array)
+        print("contact_array_sorted", contact_array_sorted)
 
 
+    print("Contact records:")
     # loop through each line
     # Connect first name with contacts
-    for i in range(0,len(first_name_array)):
-        print(f"  {first_name_array[i]} had contact with {", ".join((contact_array[i]))}")
+    for i in range(0,len(first_name_array_sorted)):
+        print(f"  {first_name_array_sorted[i]} had contact with {", ".join((contact_array_sorted[i]))}")
 
     return(contact_array,first_name_array,people_array)
 
 # Part 2
-# I used a array to tranverse since it has O(n) and to search I used a binary tree since it is a O(log2n) for a total O(nlog2n)
+# I used an array to transverse since it has O(n) and to search I used a binary tree since it is a O(log2n) for a total O(nlog2n)
 def patient_zeros(people_array,contact_array):
 
     # Initializing values
@@ -95,7 +108,6 @@ def patient_zeros(people_array,contact_array):
     for contact in range(len(total_contact_array)):
         contact_tree.insert(total_contact_array[contact])
 
-
     if Debug == True:
         print("total_contact_array", total_contact_array)
         print("people_array", people_array)
@@ -105,7 +117,7 @@ def patient_zeros(people_array,contact_array):
 
 
     # loop through all the people and compare to the contacts
-    # Then append to pateint zero array
+    # Then append to patient zero array
     for person in total_people_array:
         if search(contact_tree,person) == None:
             patient_zeros.append(person)
@@ -113,14 +125,46 @@ def patient_zeros(people_array,contact_array):
     if Debug == True:
         print("patient_zeros", patient_zeros)
 
+    # sort patient zeros alphabetically
+    patient_zeros.sort()
+
     # Output people who are not in other contact list
     print(f"Patient zeros: {", ".join(patient_zeros)}")
 
-# # Part 3
-# #
-# def potential_zombies(first_name_array,total_contact_array):
-#     for i in range(0,len(first_name_array)):
-#         pass
+    return total_contact_array, patient_zeros
+
+# Part 3
+# I used an array to transverse since it has O(n) and to search I used a binary tree since it is a O(log2n) for a total O(nlog2n)
+def potential_zombies(first_name_array,total_contact_array):
+
+    # Initializing values
+    potential_zombies = []
+
+    # Binary tree for all first Names
+    first_name_tree = OrderedBinaryTree()
+    for first_name in range(len(first_name_array)):
+        first_name_tree.insert(first_name_array[first_name])
+
+    if Debug == True:
+        print("first_name_array", first_name_array)
+        print("total_contact_array", total_contact_array)
+        print(first_name_tree)
+
+    # Search for the contact in firstname tree
+    for contact in total_contact_array:
+        if search(first_name_tree,contact) == None:
+            potential_zombies.append(contact)
+
+    if Debug == True:
+        print("potential zombies", potential_zombies)
+
+    # sort potential Zombies
+    potential_zombies.sort()
+
+    # Output people who are not in other contact list
+    print(f"Potential Zombies: {", ".join(potential_zombies)}")
+
+    return potential_zombies
 # Main
 #######
 
@@ -131,13 +175,15 @@ if Debug == True:
     print(set1)
 
 # Part 1 Who did each sick person have contact with
-contact_array,first_name_array,people_array = contact_with(set1)
+contact_array, first_name_array, people_array = contact_with(set1)
 
 # adding a new line
 print()
 
 # Part 2 Who are patient zeros
-patient_zeros(people_array, contact_array)
-#
-# # Part 3 Who are potential zombies
-# potential_zombies(first_name_array,total_contact_array)
+total_contact_array, patient_zeros = patient_zeros(people_array, contact_array)
+
+# Part 3 Who are potential zombies
+potential_zombies = potential_zombies(first_name_array,total_contact_array)
+
+# Part 4 Who are neither patient zeros nor potenial zombies
