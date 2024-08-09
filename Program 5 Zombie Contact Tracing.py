@@ -22,10 +22,29 @@ def search(tree, val):
             Node = Node._right
     return None
 
+# Finds the highest numbers in the array
+# outputs the highest numbers indexes
+def find_high(array):
+    biggest = [0]
+
+    for i in range(len(array)):
+
+        if biggest[0] < array[i]:
+            biggest = []
+            biggest.append(i)
+            print(array[i],biggest[0])
+        elif biggest[0] == array[i]:
+            biggest.append(i)
+        else:
+            print(array[i],biggest[0])
+
+    # used chatgpt for this format
+    result = ', '.join(map(str, biggest))
+    return (int(result))
 
 # Part 1
 # I used an ordered array since transversing to through a array has a O(n)
-def contact_with(set1):
+def contact_with(set):
     # initialize arrays
     people_array = []
     people_array_sorted = []
@@ -34,7 +53,7 @@ def contact_with(set1):
     contact_array_sorted = []
 
     # loop through each line in the set
-    for line in (set1):
+    for line in (set):
         # Split into arrays for first name and contacts
         people = line.split(",")
 
@@ -66,7 +85,7 @@ def contact_with(set1):
 
     if Debug == True:
         print("people_array", people_array)
-        print("people_array_sorted", )
+        print("people_array_sorted", people_array_sorted)
         print("first_name_array", first_name_array)
         print("first_name_array_sorted", first_name_array_sorted)
         print("contact_array", contact_array)
@@ -192,18 +211,41 @@ def neither_zeros_or_zombies(total_people_array, patient_zeros, potential_zombie
     # output of neither zeros or zombies
     print(f"Neither patient zero nor potential zombie: {", ".join(neither_zeros_or_zombies)}")
 
+# Part 5
+# I used an array since I need to transverse through the entire list to see how many contacts each person had this gave me a O(n).
+# I used index to find the index of the most contacts and then found the person in people array which gave me a big O(1) for a total of O(n)
+def viral_people(people_array):
+    # initializing values
+    sizes_of_contact_list = []
+    first_name_index = 0
 
+    # Loops through people and appends size of contact list too arr
+    for i in people_array:
+        sizes_of_contact_list.append(len(i)-1)
+
+    # who has the most contacts
+    indexes_of_most_contacts = find_high(sizes_of_contact_list)
+
+
+    if Debug == True:
+        print("sizes_of_contact_list", sizes_of_contact_list)
+        print("indexes_of_most_contacts", indexes_of_most_contacts)
+        print("people_array", people_array)
+
+    # output the person with the most contacts
+    print(f"Most viral people: {people_array[indexes_of_most_contacts][first_name_index]}")
+#######
 # Main
 #######
 
-with open("DataSet1.txt", "r") as file:
-    set1 = file.readlines()
+with open("DataSet6.txt", "r") as file:
+    set = file.readlines()
 
 if Debug == True:
-    print(set1)
+    print(set)
 
 # Part 1 Who did each sick person have contact with
-contact_array, first_name_array, people_array = contact_with(set1)
+contact_array, first_name_array, people_array = contact_with(set)
 
 # adding a new line
 print()
@@ -216,3 +258,6 @@ potential_zombies = potential_zombies(first_name_array, total_contact_array)
 
 # Part 4 Who are neither patient zeros nor potential zombies
 neither_zeros_or_zombies(total_people_array, patient_zeros, potential_zombies)
+
+# Part 5 Who are the most viral people
+viral_people(people_array)
