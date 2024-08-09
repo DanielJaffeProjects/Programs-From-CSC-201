@@ -25,22 +25,25 @@ def search(tree, val):
 # Finds the highest numbers in the array
 # outputs the highest numbers indexes
 def find_high(array):
-    biggest = [0]
+    # initializing values
+    biggest_value = [0]
+    indexes = []
 
+    # loop through the entire array
     for i in range(len(array)):
 
-        if biggest[0] < array[i]:
-            biggest = []
-            biggest.append(i)
-            print(array[i],biggest[0])
-        elif biggest[0] == array[i]:
-            biggest.append(i)
-        else:
-            print(array[i],biggest[0])
+        # if biggest value is greater than array
+        # indexes becomes new index of biggest number
+        # the biggest value becomes new biggest number
+        if biggest_value[0] < array[i]:
+            indexes = []
+            biggest_value = []
+            indexes.append(i)
+            biggest_value.append(array[i])
+        elif biggest_value[0] == array[i]:
+            indexes.append(i)
 
-    # used chatgpt for this format
-    result = ', '.join(map(str, biggest))
-    return (int(result))
+    return indexes
 
 # Part 1
 # I used an ordered array since transversing to through a array has a O(n)
@@ -213,11 +216,11 @@ def neither_zeros_or_zombies(total_people_array, patient_zeros, potential_zombie
 
 # Part 5
 # I used an array since I need to transverse through the entire list to see how many contacts each person had this gave me a O(n).
-# I used index to find the index of the most contacts and then found the person in people array which gave me a big O(1) for a total of O(n)
+# I used find_high to find the highest index of the most contacts and then found the person in people array which gave me a big O(n) for a total of O(n)
 def viral_people(people_array):
     # initializing values
     sizes_of_contact_list = []
-    first_name_index = 0
+    most_viral = []
 
     # Loops through people and appends size of contact list too arr
     for i in people_array:
@@ -226,19 +229,27 @@ def viral_people(people_array):
     # who has the most contacts
     indexes_of_most_contacts = find_high(sizes_of_contact_list)
 
+    # The most viral people
+    for i in indexes_of_most_contacts:
+        most_viral.append(people_array[i][0])
 
     if Debug == True:
         print("sizes_of_contact_list", sizes_of_contact_list)
         print("indexes_of_most_contacts", indexes_of_most_contacts)
         print("people_array", people_array)
+        print("most_viral", most_viral)
 
-    # output the person with the most contacts
-    print(f"Most viral people: {people_array[indexes_of_most_contacts][first_name_index]}")
+    # Most viral alphabetically
+    most_viral.sort()
+
+    # output the people with the most contacts
+    print(f"Most viral people: {", ".join(most_viral)}")
+
 #######
 # Main
 #######
 
-with open("DataSet6.txt", "r") as file:
+with open("DataSet1.txt", "r") as file:
     set = file.readlines()
 
 if Debug == True:
@@ -261,3 +272,6 @@ neither_zeros_or_zombies(total_people_array, patient_zeros, potential_zombies)
 
 # Part 5 Who are the most viral people
 viral_people(people_array)
+
+# Part 6 Who are the most contacted people
+contact_people(people_array)
