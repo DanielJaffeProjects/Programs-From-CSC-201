@@ -6,7 +6,6 @@
 
 # Imports
 from CSC201UT import OrderedBinaryTree
-from random import shuffle
 
 Debug = True
 
@@ -84,7 +83,7 @@ def contact_with(set1):
     return(contact_array,first_name_array,people_array)
 
 # Part 2
-# I used an array to transverse since it has O(n) and to search I used a binary tree since it is a O(log2n) for a total O(nlog2n)
+# I used an array to transverse through the all the people since it has O(n) and to search I used a binary tree for the contacts since it is a O(log2n) for a total O(nlog2n)
 def patient_zeros(people_array,contact_array):
 
     # Initializing values
@@ -128,13 +127,13 @@ def patient_zeros(people_array,contact_array):
     # sort patient zeros alphabetically
     patient_zeros.sort()
 
-    # Output people who are not in other contact list
+    # Output of patient zeros
     print(f"Patient zeros: {", ".join(patient_zeros)}")
 
-    return total_contact_array, patient_zeros
+    return total_contact_array,total_people_array, patient_zeros
 
 # Part 3
-# I used an array to transverse since it has O(n) and to search I used a binary tree since it is a O(log2n) for a total O(nlog2n)
+# I used an array to transverse the contact names since it has O(n) and to search I used a binary tree for the first names since it is a O(log2n) for a total O(nlog2n)
 def potential_zombies(first_name_array,total_contact_array):
 
     # Initializing values
@@ -161,10 +160,42 @@ def potential_zombies(first_name_array,total_contact_array):
     # sort potential Zombies
     potential_zombies.sort()
 
-    # Output people who are not in other contact list
+    # Output of potential zombies
     print(f"Potential Zombies: {", ".join(potential_zombies)}")
 
     return potential_zombies
+
+# Part 4
+# I used an array to transverse the all people names since it has O(n) and to search I used a binary tree for the zombies and zeros since it is a O(log2n) for a total O(nlog2n)
+def neither_zeros_or_zombies(total_people_array,patient_zeros,potential_zombies):
+
+    # initializing values
+    neither_zeros_or_zombies = []
+    zeros_plus_zombies = potential_zombies + patient_zeros
+
+
+    # Binary tree for zeros and zombies
+    zeros_plus_zombies_tree = OrderedBinaryTree()
+    for i in range(len(zeros_plus_zombies)):
+        zeros_plus_zombies_tree.insert(zeros_plus_zombies[i])
+
+    if Debug == True:
+        print(zeros_plus_zombies_tree)
+        print(zeros_plus_zombies)
+
+    # loop through all people
+    for person in total_people_array:
+
+        # If person a patient zeros or potential zombie append to list
+        if search(zeros_plus_zombies_tree, person) == None:
+            neither_zeros_or_zombies.append(person)
+
+    #Sort neither zeros or zombies alphabetically
+    neither_zeros_or_zombies.sort()
+
+    #output of neither zeros or zombies
+    print(f"Neither patient zero nor potential zombie: {", ".join(neither_zeros_or_zombies)}")
+
 # Main
 #######
 
@@ -181,9 +212,10 @@ contact_array, first_name_array, people_array = contact_with(set1)
 print()
 
 # Part 2 Who are patient zeros
-total_contact_array, patient_zeros = patient_zeros(people_array, contact_array)
+total_contact_array,total_people_array, patient_zeros = patient_zeros(people_array, contact_array)
 
 # Part 3 Who are potential zombies
 potential_zombies = potential_zombies(first_name_array,total_contact_array)
 
-# Part 4 Who are neither patient zeros nor potenial zombies
+# Part 4 Who are neither patient zeros nor potential zombies
+neither_zeros_or_zombies(total_people_array,patient_zeros,potential_zombies)
