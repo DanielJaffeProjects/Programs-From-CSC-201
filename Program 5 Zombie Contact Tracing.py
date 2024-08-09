@@ -5,9 +5,21 @@
 #########################
 
 # Imports
-from binarysearchtree import TreeNode,BinarySearchTree
+from CSC201UT import OrderedBinaryTree
 
 Debug = True
+
+# Added search function for binary tree
+def search(tree, val):
+    Node = tree._root
+    while Node:
+        if Node._value == val:
+            return Node
+        elif val < Node._value:
+            Node = Node._left
+        else:
+            Node = Node._right
+    return None
 
 # Part 1
 # I used an ordered array since tranversing to through a array has a O(n)
@@ -22,13 +34,10 @@ def contact_with(set1):
 
     # loop through each line in the set
     for line in (set1):
-        print(line)
         # Split into arrays for first name and contacts
         people = line.split(",")
 
-        # first_name_array.append(people[0])
-        # contact_array.append(people[1:])
-        # contact_array.sort()
+    # Add all people into one array
         people_array.append(people)
 
     # Sorts so that first name in people array is alphabetical
@@ -62,28 +71,44 @@ def contact_with(set1):
     return(contact_array,first_name_array,people_array)
 
 # Part 2
-#
+# I used a array to tranverse since it has O(n) and to search I used a binary tree since it is a O(log2n) for a total O(nlog2n)
 def patient_zeros(people_array,contact_array):
 
     # Initializing values
     total_contact_array = []
-
-    # initialize patients zeros array
     patient_zeros = []
+    total_people_array =[]
 
     # used geeks for geeks to combine contact array into one single array
     for i in sum(contact_array,[]):
         if i not in total_contact_array:
             total_contact_array.append(i)
 
+    # Combines all people into on array
+    # removes duplicates
+    for i in sum(people_array,[]):
+        if i not in total_people_array:
+            total_people_array.append(i)
+
+    # Binary tree for all contacts
+    contact_tree = OrderedBinaryTree()
+    for contact in range(len(total_contact_array)):
+        contact_tree.insert(total_contact_array[contact])
+
 
     if Debug == True:
-        print(total_contact_array)
-        print(people_array)
-        print(contact_array)
+        print("total_contact_array", total_contact_array)
+        print("people_array", people_array)
+        print("contact_array", contact_array)
+        print("total_people_array", total_people_array)
+        print(contact_tree)
 
-    # loop through all the people and append people not in contact array
-    for i in range(0,len(people_array)):
+
+    # loop through all the people and compare to the contacts
+    # Then append to pateint zero array
+    for person in total_people_array:
+        if search(contact_tree,person) == None:
+            patient_zeros.append(person)
 
     if Debug == True:
         print("patient_zeros", patient_zeros)
@@ -91,7 +116,6 @@ def patient_zeros(people_array,contact_array):
     # Output people who are not in other contact list
     print(f"Patient zeros: {", ".join(patient_zeros)}")
 
-    return(total_contact_array)
 # # Part 3
 # #
 # def potential_zombies(first_name_array,total_contact_array):
@@ -113,7 +137,7 @@ contact_array,first_name_array,people_array = contact_with(set1)
 print()
 
 # Part 2 Who are patient zeros
-total_contact_array = patient_zeros(people_array, contact_array)
+patient_zeros(people_array, contact_array)
 #
 # # Part 3 Who are potential zombies
 # potential_zombies(first_name_array,total_contact_array)
