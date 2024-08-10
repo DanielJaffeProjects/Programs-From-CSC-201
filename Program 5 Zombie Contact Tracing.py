@@ -45,6 +45,32 @@ def find_high(array):
 
     return indexes
 
+    # Finds how much each name is in the contacts
+def most_names(array_of_names):
+    # Initializing values
+    counter = 1
+    counter_array = []
+
+    # loop through all names
+    for i in range(1,len(array_of_names)):
+
+        # if array name is equal to previus name
+        if array_of_names[i] == array_of_names[i-1]:
+            # then add one to the add one to the counter
+            counter += 1
+
+        else:
+            # otherwise append counter to
+            counter_array.append(counter)
+            # reset the counter to one
+            counter = 1
+
+    # for the last value
+    counter_array.append(counter)
+
+    return(counter_array)
+
+
 # Part 1
 # I used an ordered array since transversing to through a array has a O(n)
 def contact_with(set):
@@ -245,6 +271,38 @@ def viral_people(people_array):
     # output the people with the most contacts
     print(f"Most viral people: {", ".join(most_viral)}")
 
+# Part 6
+# I used an array since I need to transverse through the entire list to see how many people where contacted by each sick person had this gave me a O(n).
+# I used find_high to find the highest index of the most contacted people and then found the people in total_contact_array which gave me a big O(n) for a total of O(n)
+def contact_people(contact_array,total_contact_array):
+    # initializing values
+    most_contacted = []
+    all_contacts = sum(contact_array, [])
+
+    # sort contacts alphabetically
+    all_contacts.sort()
+    total_contact_array.sort()
+
+    # loop through all names and count how many of each name there are
+    counts_of_contacts = most_names(all_contacts)
+
+    # find which indexes had the most contacted
+    indexes_highest_num_contacted = find_high(counts_of_contacts)
+
+    # The most contacted people
+    for i in indexes_highest_num_contacted:
+        most_contacted.append(total_contact_array[i])
+
+    if Debug == True:
+        print("all_contacts", all_contacts)
+        print("indexes_contacts", counts_of_contacts)
+        print("most_contacts", most_contacted)
+        print("indexes_highest_num_contacted", indexes_highest_num_contacted)
+        print("total_contact_array", total_contact_array)
+
+    # output the people who were most contacted by a sick person
+    print(f"Most contacted people: {", ".join(most_contacted)}")
+
 #######
 # Main
 #######
@@ -274,4 +332,5 @@ neither_zeros_or_zombies(total_people_array, patient_zeros, potential_zombies)
 viral_people(people_array)
 
 # Part 6 Who are the most contacted people
-contact_people(people_array)
+contact_people(contact_array,total_contact_array)
+
