@@ -7,7 +7,7 @@
 # Imports
 from CSC201UT import OrderedBinaryTree
 
-Debug = True
+Debug = False
 
 
 # Added search function for binary tree
@@ -71,9 +71,9 @@ def most_names(array_of_names):
     return(counter_array)
 
 
-# Part 1
+    # Part 1
 # I used an ordered array since transversing to through a array has a O(n)
-def contact_with(set):
+def contact_with(data_set):
     # initialize arrays
     people_array = []
     people_array_sorted = []
@@ -82,7 +82,7 @@ def contact_with(set):
     contact_array_sorted = []
 
     # loop through each line in the set
-    for line in (set):
+    for line in (data_set):
         # Split into arrays for first name and contacts
         people = line.split(",")
 
@@ -303,18 +303,94 @@ def contact_people(contact_array,total_contact_array):
     # output the people who were most contacted by a sick person
     print(f"Most contacted people: {", ".join(most_contacted)}")
 
+
+# Part 7
+# I decide to use a array since I need to transverse through the contacts array and then through each seperate array
+# This gave me a O(n^2)
+def max_distance_from_potential_zombie(first_name_array, contact_array,distance_values,distance_names,num):
+    # initializing values
+    removeable = []
+    removeable_without_duplicate =[]
+    number_of_neg = []
+    # Chatgpt help me create a previous contact array
+    previous_contact_array=[contacts.copy() for contacts in contact_array]
+
+    # loop through all contacts arrays
+    for i in contact_array:
+        # loop through all array
+        for number in i:
+            # if number is -1 append it to array of negatives
+            if number == -1:
+                number_of_neg.append(number)
+                # if number of negative is equal to the length of the array
+                if len(number_of_neg) == len(contact_array):
+                    # then all contacts have been searched through
+                    return(distance_names,distance_values)
+
+
+
+    # loop through all contacts
+    for contacts in contact_array:
+        # loop through people in those contacts
+        for people in contacts:
+            # if people in contacts are in distance names then add people to removable array
+            if people in distance_names:
+                removeable.append(people)
+
+    # remove the duplicates
+    for i in removeable:
+        if i not in removeable_without_duplicate:
+            removeable_without_duplicate.append(i)
+
+    # Transverse through contacts in contact array
+    for contacts in contact_array:
+        # loop throught contacts
+        for people in contacts:
+            # if person in contacts is in removeable array
+            if people in removeable_without_duplicate:
+                # Then remove from contacts
+                contacts.remove(people)
+
+    # looop through contact array
+    for i in range(len(contact_array)):
+        # if contact_array is empty
+        if contact_array[i] == []:
+            # then append -1 to contacts array
+            contact_array[i].append(-1)
+            # and append value to distance value array
+            distance_values.append((num))
+            # add appends name to distance name array
+            distance_names.append(first_name_array[i])
+
+    # if contact array has been change
+    if previous_contact_array != contact_array:
+        # increase num by one
+        num += 1
+
+    if Debug == True:
+        print("potential_zombies", potential_zombies)
+        print("distance_names", distance_names)
+        print("distance_values", distance_values)
+        print("contact_array", contact_array)
+
+    # recursion if base case has not been fulfilled
+    return max_distance_from_potential_zombie(first_name_array, contact_array, distance_values,
+                                           distance_names, num)
+
+
+
 #######
 # Main
 #######
 
 with open("DataSet1.txt", "r") as file:
-    set = file.readlines()
+    data_set = file.readlines()
 
 if Debug == True:
-    print(set)
+    print(data_set)
 
 # Part 1 Who did each sick person have contact with
-contact_array, first_name_array, people_array = contact_with(set)
+contact_array, first_name_array, people_array = contact_with(data_set)
 
 # adding a new line
 print()
@@ -334,3 +410,42 @@ viral_people(people_array)
 # Part 6 Who are the most contacted people
 contact_people(contact_array,total_contact_array)
 
+# adding a new line
+print()
+
+# Part 7 What is each person's maximum distance from a potential zombie
+# initializing values
+distance_names = []
+distance_values = []
+num = 0
+new_contact_array = []
+name_and_distance = []
+
+# add potential zombies to array of name and values = 0
+for zombie in potential_zombies:
+    distance_names.append(zombie)
+    distance_values.append(num)
+
+# making new contact array
+for i in range (len(people_array)):
+    new_contact_array.append(people_array[i][1:])
+
+distance_names, distance_values = max_distance_from_potential_zombie(first_name_array,new_contact_array,distance_values,distance_names,num)
+
+print("Maximum distance from a potential zombie:")
+
+# append distance names and value into one array
+for i in range(len(distance_values)):
+    name_and_distance.append([distance_names[i],distance_values[i]])
+
+# sort by values then name
+# used stack overflow to understand how to sort the values before the names
+name_and_distance = sorted(name_and_distance, key=lambda x: x[1], reverse=True)
+
+# loop through the array of names and distances
+for i in range (len(name_and_distance)):
+    # output maximum distance for each person
+    print(f"  {name_and_distance[i][0]}: {name_and_distance[i][1]}")
+
+# For extra credit
+# Spreader Zombies
