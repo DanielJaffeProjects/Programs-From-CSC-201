@@ -22,6 +22,7 @@ def search(tree, val):
             Node = Node._right
     return None
 
+
 # Finds the highest numbers in the array
 # outputs the highest numbers indexes
 def find_high(array):
@@ -46,16 +47,18 @@ def find_high(array):
     return indexes
 
     # Finds how much each name is in the contacts
+
+
 def most_names(array_of_names):
     # Initializing values
     counter = 1
     counter_array = []
 
     # loop through all names
-    for i in range(1,len(array_of_names)):
+    for i in range(1, len(array_of_names)):
 
-        # if array name is equal to previus name
-        if array_of_names[i] == array_of_names[i-1]:
+        # if array name is equal to previous name
+        if array_of_names[i] == array_of_names[i - 1]:
             # then add one to the add one to the counter
             counter += 1
 
@@ -68,10 +71,11 @@ def most_names(array_of_names):
     # for the last value
     counter_array.append(counter)
 
-    return(counter_array)
-
+    return (counter_array)
 
     # Part 1
+
+
 # I used an ordered array since transversing to through a array has a O(n)
 def contact_with(data_set):
     # initialize arrays
@@ -240,6 +244,7 @@ def neither_zeros_or_zombies(total_people_array, patient_zeros, potential_zombie
     # output of neither zeros or zombies
     print(f"Neither patient zero nor potential zombie: {", ".join(neither_zeros_or_zombies)}")
 
+
 # Part 5
 # I used an array since I need to transverse through the entire list to see how many contacts each person had this gave me a O(n).
 # I used find_high to find the highest index of the most contacts and then found the person in people array which gave me a big O(n) for a total of O(n)
@@ -250,7 +255,7 @@ def viral_people(people_array):
 
     # Loops through people and appends size of contact list too arr
     for i in people_array:
-        sizes_of_contact_list.append(len(i)-1)
+        sizes_of_contact_list.append(len(i) - 1)
 
     # who has the most contacts
     indexes_of_most_contacts = find_high(sizes_of_contact_list)
@@ -271,10 +276,11 @@ def viral_people(people_array):
     # output the people with the most contacts
     print(f"Most viral people: {", ".join(most_viral)}")
 
+
 # Part 6
 # I used an array since I need to transverse through the entire list to see how many people where contacted by each sick person had this gave me a O(n).
 # I used find_high to find the highest index of the most contacted people and then found the people in total_contact_array which gave me a big O(n) for a total of O(n)
-def contact_people(contact_array,total_contact_array):
+def contact_people(contact_array, total_contact_array):
     # initializing values
     most_contacted = []
     all_contacts = sum(contact_array, [])
@@ -305,15 +311,15 @@ def contact_people(contact_array,total_contact_array):
 
 
 # Part 7
-# I decide to use a array since I need to transverse through the contacts array and then through each seperate array
+# I decide to use an array since I need to transverse through the contacts array and then through each separate array
 # This gave me a O(n^2)
-def max_distance_from_potential_zombie(first_name_array, contact_array,distance_values,distance_names,num):
+def max_distance_from_potential_zombie(first_name_array, contact_array, distance_values, distance_names, num):
     # initializing values
-    removeable = []
-    removeable_without_duplicate =[]
+    removable = []
+    removable_without_duplicate = []
     number_of_neg = []
-    # Chatgpt help me create a previous contact array
-    previous_contact_array=[contacts.copy() for contacts in contact_array]
+    # W3School was used to help me create a previous contact array
+    previous_contact_array = [contacts.copy() for contacts in contact_array]
 
     # loop through all contacts arrays
     for i in contact_array:
@@ -325,9 +331,7 @@ def max_distance_from_potential_zombie(first_name_array, contact_array,distance_
                 # if number of negative is equal to the length of the array
                 if len(number_of_neg) == len(contact_array):
                     # then all contacts have been searched through
-                    return(distance_names,distance_values)
-
-
+                    return (distance_names, distance_values)
 
     # loop through all contacts
     for contacts in contact_array:
@@ -335,23 +339,23 @@ def max_distance_from_potential_zombie(first_name_array, contact_array,distance_
         for people in contacts:
             # if people in contacts are in distance names then add people to removable array
             if people in distance_names:
-                removeable.append(people)
+                removable.append(people)
 
     # remove the duplicates
-    for i in removeable:
-        if i not in removeable_without_duplicate:
-            removeable_without_duplicate.append(i)
+    for i in removable:
+        if i not in removable_without_duplicate:
+            removable_without_duplicate.append(i)
 
     # Transverse through contacts in contact array
     for contacts in contact_array:
-        # loop throught contacts
+        # loop through contacts
         for people in contacts:
-            # if person in contacts is in removeable array
-            if people in removeable_without_duplicate:
+            # if person in contacts is in removable array
+            if people in removable_without_duplicate:
                 # Then remove from contacts
                 contacts.remove(people)
 
-    # looop through contact array
+    # loop through contact array
     for i in range(len(contact_array)):
         # if contact_array is empty
         if contact_array[i] == []:
@@ -375,8 +379,7 @@ def max_distance_from_potential_zombie(first_name_array, contact_array,distance_
 
     # recursion if base case has not been fulfilled
     return max_distance_from_potential_zombie(first_name_array, contact_array, distance_values,
-                                           distance_names, num)
-
+                                              distance_names, num)
 
 
 #######
@@ -408,7 +411,7 @@ neither_zeros_or_zombies(total_people_array, patient_zeros, potential_zombies)
 viral_people(people_array)
 
 # Part 6 Who are the most contacted people
-contact_people(contact_array,total_contact_array)
+contact_people(contact_array, total_contact_array)
 
 # adding a new line
 print()
@@ -427,23 +430,24 @@ for zombie in potential_zombies:
     distance_values.append(num)
 
 # making new contact array
-for i in range (len(people_array)):
+for i in range(len(people_array)):
     new_contact_array.append(people_array[i][1:])
 
-distance_names, distance_values = max_distance_from_potential_zombie(first_name_array,new_contact_array,distance_values,distance_names,num)
+distance_names, distance_values = max_distance_from_potential_zombie(first_name_array, new_contact_array,
+                                                                     distance_values, distance_names, num)
 
 print("Maximum distance from a potential zombie:")
 
 # append distance names and value into one array
 for i in range(len(distance_values)):
-    name_and_distance.append([distance_names[i],distance_values[i]])
+    name_and_distance.append([distance_names[i], distance_values[i]])
 
 # sort by values then name
 # used stack overflow to understand how to sort the values before the names
 name_and_distance = sorted(name_and_distance, key=lambda x: x[1], reverse=True)
 
 # loop through the array of names and distances
-for i in range (len(name_and_distance)):
+for i in range(len(name_and_distance)):
     # output maximum distance for each person
     print(f"  {name_and_distance[i][0]}: {name_and_distance[i][1]}")
 
