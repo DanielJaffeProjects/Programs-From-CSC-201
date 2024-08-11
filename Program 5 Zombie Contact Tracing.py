@@ -73,9 +73,17 @@ def most_names(array_of_names):
 
     return (counter_array)
 
-    # Part 1
+
+# count the -1 in array
+def count_negative_one(array1):
+    counter = 0
+    for i in array1:
+        if i == [-1]:
+            counter += 1
+    return counter
 
 
+# Part 1
 # I used an ordered array since transversing to through a array has a O(n)
 def contact_with(data_set):
     # initialize arrays
@@ -318,8 +326,8 @@ def max_distance_from_potential_zombie(first_name_array, contact_array, distance
     removable = []
     removable_without_duplicate = []
     number_of_neg = []
-    # W3School was used to help me create a previous contact array
-    previous_contact_array = [contacts.copy() for contacts in contact_array]
+    getting_remove = []
+    previous_contact_array = count_negative_one(contact_array)
 
     # loop through all contacts arrays
     for i in contact_array:
@@ -352,24 +360,40 @@ def max_distance_from_potential_zombie(first_name_array, contact_array, distance
         for people in contacts:
             # if person in contacts is in removable array
             if people in removable_without_duplicate:
-                # Then remove from contacts
-                contacts.remove(people)
+                # add this to getting remove array in the front
+                getting_remove.insert(0, people)
 
-    # loop through contact array
-    for i in range(len(contact_array)):
-        # if contact_array is empty
-        if contact_array[i] == []:
-            # then append -1 to contacts array
-            contact_array[i].append(-1)
-            # and append value to distance value array
-            distance_values.append((num))
-            # add appends name to distance name array
-            distance_names.append(first_name_array[i])
+    # loop through the contacts
+    for contacts in contact_array:
+        # loop through people
+        for i in getting_remove:
+            # if person is in contacts remove them
+            if i in contacts:
+                contacts.remove(i)
+
+    count_contact_array = str(count_negative_one(contact_array))
+    previous_contact_array_count = str(previous_contact_array)
 
     # if contact array has been change
-    if previous_contact_array != contact_array:
+    if str(previous_contact_array) == str(count_negative_one(contact_array)) != True:
         # increase num by one
         num += 1
+        # loop through contact array
+        for i in range(len(contact_array)):
+            # if contact_array is empty
+            if contact_array[i] == []:
+                # then append -1 to contacts array
+                contact_array[i].append(-1)
+                # and append value to distance value array
+                distance_values.append((num))
+                # add appends name to distance name array
+                distance_names.append(first_name_array[i])
+
+    if Debug == True:
+        print("previous_contact_array", previous_contact_array)
+        print("contact_array", contact_array)
+        print("count_negative_one", count_negative_one(contact_array))
+        print("count_negative_one", (previous_contact_array))
 
     if Debug == True:
         print("potential_zombies", potential_zombies)
@@ -378,8 +402,30 @@ def max_distance_from_potential_zombie(first_name_array, contact_array, distance
         print("contact_array", contact_array)
 
     # recursion if base case has not been fulfilled
-    return max_distance_from_potential_zombie(first_name_array, contact_array, distance_values,
-                                              distance_names, num)
+    return max_distance_from_potential_zombie(first_name_array, contact_array, distance_values, distance_names, num)
+
+
+# Extra credit 1
+# I used an array since I want to transverse through the entire contact list to see if they are a subset of potential zombies this gave me O(n)
+def spreader_zombies(first_name_array, people_array, potential_zombies):
+    # initializing values
+    spreader_zombie_array = []
+
+    #  loop through len of people array
+    for i in range(len(people_array)):
+
+        # find who are the contacts
+        contact_array = people_array[i][1:]
+
+        # looked up how to use set and subset on W3School
+        if set(contact_array).issubset(set(potential_zombies)):
+            spreader_zombie_array.append(first_name_array[i])
+
+    # sort spreader zombie alphabetically
+    spreader_zombie_array.sort()
+
+    # output the spreader zombies
+    print("Spreader zombies", ", ".join(spreader_zombie_array))
 
 
 #######
@@ -451,5 +497,9 @@ for i in range(len(name_and_distance)):
     # output maximum distance for each person
     print(f"  {name_and_distance[i][0]}: {name_and_distance[i][1]}")
 
+# add a extra line
+print()
+
 # For extra credit
 # Spreader Zombies
+spreader_zombies(first_name_array, people_array, potential_zombies)
