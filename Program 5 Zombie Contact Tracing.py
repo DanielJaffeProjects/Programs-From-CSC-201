@@ -76,10 +76,15 @@ def most_names(array_of_names):
 
 # count the -1 in array
 def count_negative_one(array1):
+    # initialize counter
     counter = 0
+    # loop through array
     for i in array1:
+        # if array in array is -1
         if i == [-1]:
+            # then add 1 to counter
             counter += 1
+    # return counter
     return counter
 
 
@@ -425,14 +430,14 @@ def spreader_zombies(first_name_array, people_array, potential_zombies):
     spreader_zombie_array.sort()
 
     # output the spreader zombies
-    print("Spreader zombies", ", ".join(spreader_zombie_array))
+    print("  Spreader zombies:", ", ".join(spreader_zombie_array))
 
 
 #######
 # Main
 #######
 
-with open("DataSet1.txt", "r") as file:
+with open("DataSet5.txt", "r") as file:
     data_set = file.readlines()
 
 if Debug == True:
@@ -497,9 +502,10 @@ for i in range(len(name_and_distance)):
     # output maximum distance for each person
     print(f"  {name_and_distance[i][0]}: {name_and_distance[i][1]}")
 
-# add a extra line
+# add an extra line
 print()
 
 # For extra credit
 # Spreader Zombies
+print("For extra credit:")
 spreader_zombies(first_name_array, people_array, potential_zombies)
